@@ -1,0 +1,67 @@
+GET http://localhost:3001/api/users
+###
+
+POST http://localhost:3001/api/users/register
+Content-Type: application/json
+
+{
+  "name":"chaoo",
+  "email":"xuandangvinh@gmail.com",
+  "password": "12345678"
+}
+###
+
+POST http://localhost:3001/api/users/login
+Content-Type: application/json
+
+{
+  "email":"quyet.trinh@gmail.com",
+  "password": "12345678"
+}
+###
+POST http://localhost:3001/api/users/find
+Content-Type: application/json
+
+{
+  "userId": "6493b4ff96603f3b130a723fds"
+}
+###
+POST http://localhost:3001/api/chats
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTNiNGZmOTY2MDNmM2IxMzBhNzIzZiIsImlhdCI6MTY4NzQwMzY0OCwiZXhwIjoxNjg3NDE0NDQ4fQ.fwRR2Cvrl_WIa748NW-WDKjYl5g_VgEOUKQmdUE3QFo
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTNiNGZmOTY2MDNmM2IxMzBhNzIzZiIsImlhdCI6MTY4NzQwMzY0OCwiZXhwIjoxNjg5OTk1NjQ4fQ.Jr5UCOWUQSnckqbL8Kcxl_9eoM9YjtPtDItwiVjvIas
+
+{
+  "firstId": "6493a530744777c8a2df7653",
+  "secondId": "6493b4ff96603f3b130a723f"
+}
+###
+GET http://localhost:3001/api/chats/findUser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTNiNGZmOTY2MDNmM2IxMzBhNzIzZiIsImlhdCI6MTY4NzQxNjI4OCwiZXhwIjoxNjg3NDI3MDg4fQ.6gQ9SZCQ01IAUGmkc-_dQZX6aqa--6HYXwJiQ_aQjBQ
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTNiNGZmOTY2MDNmM2IxMzBhNzIzZiIsImlhdCI6MTY4NzQxNjI4OCwiZXhwIjoxNjkwMDA4Mjg4fQ.b3n5Z4zYQWXo2YTVWDmbhwL0-KVT16fW_9B1pdanl1k
+
+
+###
+POST http://localhost:3001/api/chats/findChat
+Content-Type: application/json
+
+{
+  "firstId" : "6493a530744777c8a2df7653",
+  "secondId" : "6493b4ff96603f3b130a723f"
+}
+###
+POST http://localhost:3001/api/messages/create
+Content-Type: application/json
+
+{
+  "chatId": "6493b5a296603f3b130a7242",
+  "senderId":"6493b4ff96603f3b130a723f",
+  "text": "Hello my name is Trịnh Văn Quyết"
+}
+###
+POST http://localhost:3001/api/messages
+Content-Type: application/json
+
+{
+"chatId": "6493b5a296603f3b130a7242"
+}
